@@ -3,6 +3,11 @@
     padding-bottom: 5px;
 }
 
+.container {
+    margin: 0 auto !important;
+    width: 400px !important;
+}
+
 #btnGroup {
     padding-top: 10px;
 }
@@ -16,11 +21,12 @@
     padding-left: 20px;
     padding-top: 10px;
     margin-top: 20px;
-    width: 250px;
+    width: 400px;
     height:500px;
     overflow:scroll;
     overflow-x:hidden;
     /* overflow: hidden; */
+    overflow-y: auto;
 }
 
 #user {
