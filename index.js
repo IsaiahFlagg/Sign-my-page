@@ -22,6 +22,7 @@ database.ref('/count').on('value', function (snapshot) {
 database.ref('/users').on('value', function (snapshot) {
 
   if (snapshot.child(`signatures`).exists()) {
+    $('.signedUsers').empty();
     // Set the variables for highBidder/highPrice equal to the stored values.
     console.log(snapshot.val());
     signatures = snapshot.val().signatures;
@@ -55,17 +56,19 @@ $("#countBtn").on("click", function () {
 $("#signBtn").on("click", function () {
 
   let signersName = $('#signersName').val().trim(); 
-  signatures.push(signersName);
+  signatures = [...signatures, signersName];
+  // signatures.push(signersName);
   $('#signersName').val("");
   console.log(signatures);
   
-
-
+  
+  
   database.ref('/users').set({
     signatures: signatures
   });
-
-
+  
+ 
+  
   
 
 });
